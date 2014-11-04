@@ -1,0 +1,38 @@
+
+package jp.yahooapis.im.V4.AdGroupTargetService;
+
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Java class for TargetListStatus.
+ * 
+ * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * <pre>
+ * &lt;simpleType name="TargetListStatus">
+ *   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *     &lt;enumeration value="EXISTS"/>
+ *     &lt;enumeration value="DELETED"/>
+ *   &lt;/restriction>
+ * &lt;/simpleType>
+ * </pre>
+ * 
+ */
+@XmlType(name = "TargetListStatus")
+@XmlEnum
+public enum TargetListStatus {
+
+    EXISTS,
+    DELETED;
+
+    public String value() {
+        return name();
+    }
+
+    public static TargetListStatus fromValue(String v) {
+        return valueOf(v);
+    }
+
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="JAVA_SAMPLE" default="build">
+
+    <!--==================================
+      Property for build tasks
+    ===================================-->
+    <property name="src.dir"   value="${basedir}/src"/>
+    <property name="dest.dir"  value="${basedir}/build"/>
+
+    <!--==================================
+      target for compile and jar
+    ===================================-->
+    <target name="build">
+        <mkdir dir="${dest.dir}"/>
+        <mkdir dir="${dest.dir}/classes"/>
+        <mkdir dir="${dest.dir}/jar"/>
+        <javac encoding="UTF-8" srcdir="${src.dir}" destdir="${dest.dir}/classes" includeantruntime="false"/>
+        <jar basedir="${dest.dir}/classes" destfile="${dest.dir}/jar/sample.jar"/>
+    </target>
+
+</project>
